@@ -1,17 +1,36 @@
 # SA Android Unlimited Gym Training
 
+> [!IMPORTANT]
+> No more daily gym limits in **GTA: San Andreas Android 2.10** — train at any
+> machine for as long as you want, every day.
+
 Remove the daily gym grind limit in GTA: San Andreas for Android 2.10.
 No more "come back tomorrow" wall, no more forced step-off at 200 reps —
 train at the gym as long as you want, every day.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.2-green.svg)](https://github.com/Jean7z/gta-sa-unlimited-gym/releases)
-[![Platform](https://img.shields.io/badge/platform-Android-blueviolet.svg)]()
+[![Version: 1.2](https://img.shields.io/badge/version-1.2-green.svg)](https://github.com/Jean7z/gta-sa-unlimited-gym/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Game: GTA SA 2.10 Android](https://img.shields.io/badge/game-GTA%20SA%202.10%20Android-blueviolet.svg)]()
+[![Platform: Android](https://img.shields.io/badge/platform-Android-lightgrey.svg)]()
+[![Loader: AML](https://img.shields.io/badge/loader-Android%20Mod%20Loader-orange.svg)](https://github.com/AndroidModLoader/AndroidModLoader)
 
-> A mod for [Android Mod Loader (AML)](https://github.com/AndroidModLoader/AndroidModLoader)
-> by RusJJ. The official SA Android plugin SDK
-> ([aml-psdk](https://github.com/AndroidModLoader/aml-psdk)) is used and provided
-> as a git submodule.
+An [Android Mod Loader (AML)](https://github.com/AndroidModLoader/AndroidModLoader) plugin.
+Requires the official SA Android plugin SDK ([aml-psdk](https://github.com/AndroidModLoader/aml-psdk), included as a submodule).
+
+---
+
+## Table of contents
+
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Building from source](#building-from-source)
+- [Project layout](#project-layout)
+- [Compatibility](#compatibility)
+- [Credits](#credits)
+- [License](#license)
 
 ---
 
@@ -29,7 +48,7 @@ train at the gym as long as you want, every day.
 
 The gym scripts (GYMBENC, GYMBIKE, GYMDUMB, GYMTREA) allow training only when
 
-```
+```text
 gym_day > gym_final_day  OR  gym_month > gym_final_month
 ```
 
@@ -58,14 +77,13 @@ Pinning `gym_final_*` to `-1` keeps the entry gate open; pinning
 - **GTA: San Andreas** for Android **2.10** (play store version).
 - **[Android Mod Loader (AML)](https://github.com/AndroidModLoader/AndroidModLoader)**
   installed and working (the game must load `libAML.so`).
-- An **arm64-v8a** device/module (most modern devices) or **armeabi-v7a** (32-bit).
+- An **arm64-v8a** device/module — GTA:SA 2.10 ships arm64-only.
 
 ## Installation
 
 1. Grab the latest **`.so`** from the [Releases](https://github.com/Jean7z/gta-sa-unlimited-gym/releases)
-   page. Pick the one that matches your architecture:
-   - `libAML_PSDK_Gym64.so` → **arm64-v8a** (64-bit, most devices)
-   - `libAML_PSDK_Gym.so`   → **armeabi-v7a** (32-bit)
+   page:
+   - `libAML_PSDK_Gym64.so` → **arm64-v8a**
 2. Push it into the game's mods folder:
    `/Android/data/com.rockstargames.gtasa/mods/`
 3. Start the game. The mod is active automatically.
@@ -76,8 +94,8 @@ Delete the `.so` from the mods folder. Nothing else is changed.
 
 ## Configuration
 
-The mod reads the AML config file. Set the toggle to `0`/`false` to disable it
-without deleting the mod:
+All keys live under the `[Unlimited Gym]` section of the AML config file. Set
+the toggle to `0`/`false` to disable it without deleting the mod:
 
 | Key | Default | Description |
 |-----|---------|-------------|
@@ -103,9 +121,8 @@ $ANDROID_NDK_HOME/ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK
 
 The resulting libraries land in `libs/`:
 
-```
+```text
 libs/arm64-v8a/libAML_PSDK_Gym64.so
-libs/armeabi-v7a/libAML_PSDK_Gym.so
 ```
 
 > Environment tip: make sure `ANDROID_NDK_HOME` points at your NDK directory
@@ -123,7 +140,7 @@ mv psdk psdk.bak && ln -s /path/to/aml-psdk psdk
 
 ## Project layout
 
-```
+```text
 .
 ├── Android.mk          # ndk-build makefile (selects module name per ABI)
 ├── Application.mk      # ABI targets and toolchain settings
