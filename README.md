@@ -1,12 +1,11 @@
 # SA Android Unlimited Gym Training
 
 > [!IMPORTANT]
-> No more daily gym limits in **GTA: San Andreas Android 2.10** — train at any
+> No more daily gym limits in **GTA: San Andreas Android 2.10**: train at any
 > machine for as long as you want, every day.
 
-Remove the daily gym grind limit in GTA: San Andreas for Android 2.10.
-No more "come back tomorrow" wall, no more forced step-off at 200 reps —
-train at the gym as long as you want, every day.
+Removes the daily gym limit in GTA: San Andreas for Android 2.10. There is no
+forced step-off at 200 reps and no "come back tomorrow" block.
 
 [![Version: 1.2](https://img.shields.io/badge/version-1.2-green.svg)](https://github.com/Jean7z/gta-sa-unlimited-gym/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
@@ -36,13 +35,12 @@ Requires the official SA Android plugin SDK ([aml-psdk](https://github.com/Andro
 
 ## Features
 
-- **No daily limit** — keep training at any gym machine for as long as you want.
-- **No forced step-off** — you are never thrown off the bench/bike at 200 reps.
-- **No "come back tomorrow"** — the daily block is removed, re-enter the gym freely.
-- **Coexists with other mods** — tested alongside other AML mods.
-- **No game code is modified** — a small background thread pins four script
-  variables every 50 ms.
-- **Clean uninstall** — just delete the `.so`, nothing else touched.
+- No daily limit. Keep training on any gym machine for as long as you want;
+  you are never thrown off the bench or bike at 200 reps, and re-entering the
+  gym is always allowed.
+- Coexists with other AML mods. Nothing in the game is modified: a background
+  thread pins four script variables every 50 ms.
+- Uninstall is deleting the `.so`.
 
 ## How it works
 
